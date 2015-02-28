@@ -1,0 +1,11 @@
+@import "semantic-ui";
+@import "welcome";
+
+.ui.launch.button {
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  left: -1px;
+}
+
+

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      | Bpbfe
+    meta charset="utf-8"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    = render 'shared/sidebar'
+    .pusher
+      .ui.inverted.main.menu.fixed
+        #launcher.title.item
+          i.content.icon
+          b Menu
+        .container
+
+      == yield
