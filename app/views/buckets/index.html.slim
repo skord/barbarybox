@@ -1,0 +1,20 @@
+.ui.stackable.one.column.grid.page
+  .column
+    = bucket_breadcrumbs
+      i.right.chevron.icon.divider
+    table.ui.celled.striped.table
+      thead
+        tr
+          th colspan="3"
+            | Root Bucket
+
+      tbody
+        = render @buckets
+      tfoot.full-width
+        tr
+          th
+          th colspan='4'
+            = link_to new_bucket_path, class: 'ui icon labeled button' do
+              i.icon.folder
+              | New
+            

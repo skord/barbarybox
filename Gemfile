@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
+gem 'acts_as_tree'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'passenger'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -35,9 +39,3 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
 end
-
-group :development do
-  gem 'html2slim'
-  gem 'erb2slim'
-end
-

@@ -1,0 +1,16 @@
+tr
+  td.collapsing
+    i.folder.icon.violet
+    = link_to bucket.name, bucket
+  td 
+    = bucket.created_at
+    i
+      |   (
+      = time_ago_in_words(bucket.created_at)
+      |  ago )
+  td
+    .ui.icon.buttons
+      = link_to edit_bucket_path(bucket), class: 'ui button blue' do
+        i.icon.edit.white
+      = link_to bucket, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'ui button red' do
+        i.icon.ban.white

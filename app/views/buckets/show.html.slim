@@ -1,0 +1,22 @@
+.ui.stackable.one.column.grid.page
+  .column
+    = bucket_breadcrumbs(@bucket)
+    table.ui.celled.striped.table
+      thead
+        tr
+          th colspan="4"
+            | #{@bucket.name} Bucket
+      tbody
+        - @bucket.children.each do |child|
+          = render child
+      tfoot.full-width
+        tr
+          th
+          th colspan='4'
+            = link_to new_bucket_path(parent_id: @bucket), class: 'ui icon labeled button' do
+              i.icon.folder
+              | New
+            = link_to edit_bucket_path, class: 'ui icon labeled button' do
+              i.icon.pencil
+              | Edit
+

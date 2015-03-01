@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 79b8e2496d946876b76e7821e74572d0917fe9ca
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/doabit/semantic-ui-sass.git
   revision: ba3acee5bb44f2532436f83e3d7d0cd3152b5fe9
   branch: v1.0beta
@@ -44,6 +54,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_tree (2.1.0)
+      activerecord (>= 3.0.0)
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -60,28 +72,15 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     columnize (0.9.0)
+    daemon_controller (1.2.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
-    erb2slim (0.0.1)
-      erubis
-      haml
-      haml2slim
-      hpricot
     erubis (2.7.0)
     execjs (2.3.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
-    haml (4.0.6)
-      tilt
-    haml2slim (0.4.7)
-      haml (>= 3.0)
-      nokogiri
-      ruby_parser
     hike (1.2.3)
-    hpricot (0.8.6)
-    html2slim (0.1.1)
-      hpricot
     i18n (0.7.0)
     jbuilder (2.2.8)
       activesupport (>= 3.0.0, < 5)
@@ -101,6 +100,10 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    passenger (4.0.59)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.1)
     rack (1.6.0)
     rack-test (0.6.3)
@@ -149,8 +152,6 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.0)
-    ruby_parser (3.6.4)
-      sexp_processor (~> 4.1)
     sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -161,7 +162,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sexp_processor (4.4.5)
     slim (3.0.2)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -203,12 +203,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_tree
   byebug
+  carrierwave!
   coffee-rails (~> 4.1.0)
-  erb2slim
-  html2slim
   jbuilder (~> 2.0)
   jquery-rails
+  passenger
   pg
   rails (= 4.2.0)
   rspec-rails

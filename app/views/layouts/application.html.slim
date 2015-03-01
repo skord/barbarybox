@@ -12,10 +12,13 @@ html
   body
     = render 'shared/sidebar'
     .pusher
-      .ui.inverted.main.menu.fixed
+      .ui.inverted.main.menu.fixed.blue
         #launcher.title.item
           i.content.icon
           b Menu
+        .right.menu
+          .title.item
+            i.question.icon
         .container
 
       == yield
